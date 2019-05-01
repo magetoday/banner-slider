@@ -1,0 +1,30 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="magetoday_bannerslider_banner" resource="default" engine="innodb" comment="MageToday bannerSlider banner">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Banner Id"  />
+        <column xsi:type="varchar" name="name" length="255" nullable="false" comment="Banner Name"/>
+        <column xsi:type="smallint" name="status" nullable="false" default="1" comment="Banner Status"/>
+        <column xsi:type="smallint" name="type" nullable="false" default="0" comment="Banner Type"/>
+        <column xsi:type="text" name="content" length="64k" comment="Banner Content(Custom html/css)"/>
+        <column xsi:type="varchar" name="image" length="255" nullable="false" comment="Banner Image"/>
+        <column xsi:type="varchar" name="url" length="255" comment="Banner URL"/>
+        <column xsi:type="varchar" name="title" length="255" comment="Banner title"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Banner Creation time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Banner Update time"/>
+        <constrains xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constrains>
+        <constraint xsi:type="unique" referenceId="MAGETODAY_BANNERSLIDER_BANNER_ID">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="MAGETODAY_BANNERSLIDER_BANNER_NAME" indexType="btree">
+            <column name="name"/>
+        </index>
+        <index referenceId="MAGETODAY_BANNERSLIDER_BANNER_TITLE" indexType="btree">
+            <column name="title"/>
+        </index>
+    </table>
+</schema>

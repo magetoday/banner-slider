@@ -1,0 +1,23 @@
+{
+    "magetoday_bannerslider_banner": {
+        "column": {
+            "id": true,
+            "name": true,
+            "status": true,
+            "type": true,
+            "content": true,
+            "image": true,
+            "url": true,
+            "title": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "MAGETODAY_BANNERSLIDER_BANNER_NAME": true,
+            "MAGETODAY_BANNERSLIDER_BANNER_TITLE": true
+        },
+        "constraint": {
+            "MAGETODAY_BANNERSLIDER_BANNER_ID": true
+        }
+    }
+}
